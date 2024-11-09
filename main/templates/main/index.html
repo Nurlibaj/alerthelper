@@ -1,10 +1,89 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Dashboard Preview</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-<p>Govno!</p>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Dashboard</h2>
+            <ul>
+                <li><a href="#">Main Page</a></li>
+                <li><a href="#">Notifications</a></li>
+                <li><a href="#">Logs</a></li>
+                <li><a href="#">Statistics</a></li>
+
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <h1>Overview</h1>
+
+             <!-- Floor Sections -->
+            <div class="floor" id="first-floor">
+                <h2>1st Floor</h2>
+                <div class="cards">
+                    <div class="card">
+                        <div class="notification-indicator"></div>
+                        <h3>D block</h3>
+                        <p>Status:</p>
+                    </div>
+                    <div class="card">
+                        <h3>L block</h3>
+                        <p>Temperature: 21°C</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Gym</h3>
+                        <p>Temperature: 22°C</p>
+                    </div>
+                    <div class="card">
+                        <h3>assembly hall</h3>
+                        <p>Temperature: 22°C</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="floor" id="second-floor">
+                <h2>2nd Floor</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Admin block</h3>
+                        <p>Temperature: 23°C</p>
+                    </div>
+                    <div class="card">
+                        <h3>D block</h3>
+                        <p>Temperature: 22°C</p>
+                    </div>
+                    <div class="card">
+                        <h3>L block</h3>
+                        <p>Temperature: 22°C</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="floor" id="third-floor">
+                <h2>3rd Floor</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Room 301</h3>
+                        <p>Temperature: 24°C</p>
+                    </div>
+                    <div class="card">
+                        <h3>Room 302</h3>
+                        <p>Temperature: 23°C</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
