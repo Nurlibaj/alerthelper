@@ -28,59 +28,50 @@
             <h1>Overview</h1>
 
              <!-- Floor Sections -->
-            <div class="floor" id="first-floor">
+           <div class="floor" id="first-floor">
                 <h2>1st Floor</h2>
                 <div class="cards">
+                    {% for restroom in first_floor_restrooms %}
                     <div class="card">
-                        <div class="notification-indicator"></div>
-                        <h3>D block</h3>
-                        <p>Status:</p>
-                    </div>
-                    <div class="card">
-                        <h3>L block</h3>
-                        <p>Temperature: 21°C</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Gym</h3>
-                        <p>Temperature: 22°C</p>
-                    </div>
-                    <div class="card">
-                        <h3>assembly hall</h3>
-                        <p>Temperature: 22°C</p>
-                    </div>
+                    <div class="notification-indicator {% if restroom.status %}red{% else %}green{% endif %}"></div>
+                    <h3>{{ restroom.location }}</h3>
+                    <p>Status: {% if restroom.status %}Красный{% else %}Зеленый{% endif %}</p>
+                    <p>Макс. вместимость: {{ restroom.max_capacity }} человек</p>
+                    <p>Этаж: {{ restroom.floor }}</p>
+                </div>
+            {% endfor %}
                 </div>
             </div>
 
+            <!-- 2nd Floor -->
             <div class="floor" id="second-floor">
                 <h2>2nd Floor</h2>
                 <div class="cards">
-                    <div class="card">
-                        <h3>Admin block</h3>
-                        <p>Temperature: 23°C</p>
-                    </div>
-                    <div class="card">
-                        <h3>D block</h3>
-                        <p>Temperature: 22°C</p>
-                    </div>
-                    <div class="card">
-                        <h3>L block</h3>
-                        <p>Temperature: 22°C</p>
-                    </div>
+                    {% for restroom in second_floor_restrooms %}
+                        <div class="card">
+                            <div class="notification-indicator {% if restroom.status %}red{% else %}green{% endif %}"></div>
+                            <h3>{{ restroom.location }}</h3>
+                            <p>Status: {% if restroom.status %}Красный{% else %}Зеленый{% endif %}</p>
+                            <p>Макс. вместимость: {{ restroom.max_capacity }} человек</p>
+                            <p>Этаж: {{ restroom.floor }}</p>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
 
+            <!-- 3rd Floor -->
             <div class="floor" id="third-floor">
                 <h2>3rd Floor</h2>
                 <div class="cards">
-                    <div class="card">
-                        <h3>Room 301</h3>
-                        <p>Temperature: 24°C</p>
-                    </div>
-                    <div class="card">
-                        <h3>Room 302</h3>
-                        <p>Temperature: 23°C</p>
-                    </div>
+                    {% for restroom in third_floor_restrooms %}
+                        <div class="card">
+                            <div class="notification-indicator {% if restroom.status %}red{% else %}green{% endif %}"></div>
+                            <h3>{{ restroom.location }}</h3>
+                            <p>Status: {% if restroom.status %}Красный{% else %}Зеленый{% endif %}</p>
+                            <p>Макс. вместимость: {{ restroom.max_capacity }} человек</p>
+                            <p>Этаж: {{ restroom.floor }}</p>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </main>
