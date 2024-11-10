@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,8 @@ STATICFILES_DIRS = [
 
 # This is used for collecting all static files during deployment (e.g. with 'python manage.py collectstatic')
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# settings.py
+
+MEDIA_URL = '/media/'  # URL для доступа к файлам
+MEDIA_ROOT = BASE_DIR / 'media'  # Папка, куда будут сохраняться файлы

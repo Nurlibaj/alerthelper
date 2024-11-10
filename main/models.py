@@ -10,5 +10,12 @@ class Restroom(models.Model):
     def __str__(self):
         return f"Restroom at {self.location} on floor {self.floor}"
 
+class Event(models.Model):
+    id = models.CharField(max_length=255, primary_key=True)  # уникальный идентификатор (можно строковый)
+    people_count = models.IntegerField()  # количество людей
+    timestamp = models.DateTimeField()  # дата и время
+    image = models.ImageField(upload_to='events_images/', null=True, blank=True)  # изображение
 
+    def __str__(self):
+        return f"Event {self.id}"
 
